@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "213351583306",
+    "project_id": "firebase-punch-list"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:213351583306:android:6395bcc3f76e0873",
+        "android_client_info": {
+          "package_name": "punchlist.punchlistapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "213351583306-v4a5c0c0b0tmeg7slvfo4kfjv9v6tdas.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "punchlist.punchlistapp",
+            "certificate_hash": "DA58F86AF3A3B404F9336BEECE1331F998FCA768"
+          }
+        },
+        {
+          "client_id": "213351583306-eiasltq9l74k49nrcdj9qn03tsumgo2k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdQw1HAmKCQQ_8EYfiYRj1SrYOlccGFe8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
