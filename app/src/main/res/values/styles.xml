@@ -5,4 +5,20 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="PunchListTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#FF9311</item>
+        <item name="colorPrimaryDark">#17607D</item>
+        <item name="colorAccent">#FFF1CE</item>
+        <item name="android:actionBarStyle">@style/PunchListTheme.ActionBarStyle</item>
+    </style>
+
+    <style name="PunchListTheme.ActionBarStyle" parent="@style/Widget.AppCompat.Light.ActionBar">
+        <item name="android:titleTextStyle">@style/PunchListTheme.ActionBar.TitleTextStyle</item>
+    </style>
+
+    <style name="PunchListTheme.ActionBar.TitleTextStyle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
 </resources>

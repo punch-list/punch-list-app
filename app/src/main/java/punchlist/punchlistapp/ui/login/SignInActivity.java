@@ -1,8 +1,8 @@
-package punchlist.punchlistapp;
+package punchlist.punchlistapp.ui.login;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
+import android.support.annotation.NonNull;
 import android.view.View;
 
 import com.google.android.gms.auth.api.Auth;
@@ -11,10 +11,14 @@ import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 
-public class SignInActivity extends FragmentActivity implements View.OnClickListener, GoogleApiClient.OnConnectionFailedListener {
+import punchlist.punchlistapp.R;
+import punchlist.punchlistapp.base.ActivityBase;
+import punchlist.punchlistapp.ui.project.ProjectsActivity;
 
-    private GoogleApiClient mGoogleApiClient;
+public class SignInActivity extends ActivityBase implements View.OnClickListener, GoogleApiClient.OnConnectionFailedListener {
+
     private static final int RC_SIGN_IN = 9001;
+    private GoogleApiClient mGoogleApiClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +57,7 @@ public class SignInActivity extends FragmentActivity implements View.OnClickList
     }
 
     @Override
-    public void onConnectionFailed(ConnectionResult result) {
+    public void onConnectionFailed(@NonNull ConnectionResult result) {
         // FIXME: 11/19/16 Handle failure
     }
 
@@ -64,13 +68,10 @@ public class SignInActivity extends FragmentActivity implements View.OnClickList
 
     private void handleSignInResult(GoogleSignInResult result) {
         if (result.isSuccess()) {
-            // GoogleSignInAccount account = result.getSignInAccount();
-            openProjectsActivity();
+            ProjectsActivity.startActivity(SignInActivity.this);
+        } else {
+            // FIXME: 11/20/16 Handle failure
+            ProjectsActivity.startActivity(SignInActivity.this);
         }
-    }
-
-    private void openProjectsActivity() {
-        Intent intent = new Intent(this, ProjectsActivity.class);
-        startActivity(intent);
     }
 }

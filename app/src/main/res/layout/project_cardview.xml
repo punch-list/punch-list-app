@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/projectCardView"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:layout_gravity="center"
+    card_view:cardUseCompatPadding="true">
+
+    <TextView
+        android:id="@+id/tvProjectName"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:paddingLeft="60dp"
+        android:paddingTop="10dp"
+        android:text="Project Name"
+        android:textSize="18sp"
+        android:typeface="sans"/>
+
+    <TextView
+        android:id="@+id/tvProjectType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="60dp"
+        android:paddingTop="33dp"
+        android:text="Project Type"
+        android:textSize="14sp"/>
+</android.support.v7.widget.CardView>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_projects"
     android:layout_width="match_parent"
@@ -10,9 +9,10 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="punchlist.punchlistapp.ProjectsActivity">
-    <ListView
-        android:id="@+id/projects_list"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent" />
+    tools:context="punchlist.punchlistapp.ui.project.ProjectsActivity">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/projectsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </RelativeLayout>
