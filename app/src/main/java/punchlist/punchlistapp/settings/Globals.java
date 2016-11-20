@@ -108,6 +108,7 @@ public class Globals {
             items.add(new Item("Tile #1", "The shiniest thing you've ever seen, guaranteed!™", 10, 50, null, PLComponent.getComponentByFakeId(Globals.TILE), 300, 300, "tile1"));
 
             items.add(new Item("Paint #1", "The human eye will not be able to comprehend the vibrancy of your wall.", 10, 50, null, PLComponent.getComponentByFakeId(Globals.PAINT), EditProjectActivity.FLOORPLAN_WIDTH, EditProjectActivity.FLOORPLAN_HEIGHT, "paint1"));
+            items.add(new Item("Paint #2", "Random description", 100, 500, null, PLComponent.getComponentByFakeId(Globals.PAINT), EditProjectActivity.FLOORPLAN_WIDTH, EditProjectActivity.FLOORPLAN_HEIGHT, "paint2"));
 
             Item.updateItems(items);
         }
