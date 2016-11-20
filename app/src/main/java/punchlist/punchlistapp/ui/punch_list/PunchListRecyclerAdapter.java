@@ -17,6 +17,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import punchlist.punchlistapp.R;
 import punchlist.punchlistapp.data_model.Item;
+import punchlist.punchlistapp.settings.Globals;
 
 /**
  * Created by carlos on 11/20/16.
@@ -50,7 +51,14 @@ class PunchListRecyclerAdapter extends RecyclerView.Adapter<PunchListRecyclerAda
         final Item item = mItemsList.get(position);
 
         holder.mItemName.setText(item.name);
-        holder.mItemPrice.setText("$50 / unit");
+        holder.mItemQuantity.setText("");
+        holder.mTotalPrice.setText("Total: $" + String.valueOf(item.cost));
+        if (item.component.placeholderId == Globals.TILE) {
+            int quantity = 40;
+            holder.mItemQuantity.setText("Quantity: " + String.valueOf(quantity) + " sq.ft.");
+            holder.mTotalPrice.setText("Total: $" + String.valueOf(item.cost * quantity));
+        }
+        holder.mItemPrice.setText("$" + String.valueOf(item.cost) + " / unit");
         holder.mItemImage.setImageResource(mResources.getIdentifier(item.imageResource + "_thumbnail", "drawable", mPackageName));
     }
 
@@ -68,6 +76,10 @@ class PunchListRecyclerAdapter extends RecyclerView.Adapter<PunchListRecyclerAda
         ImageView mItemImage;
         @Bind(R.id.punchListCardView)
         CardView mCardView;
+        @Bind(R.id.tvItemQuantity)
+        TextView mItemQuantity;
+        @Bind(R.id.tvTotalPrice)
+        TextView mTotalPrice;
 
         ViewHolder(View v) {
             super(v);

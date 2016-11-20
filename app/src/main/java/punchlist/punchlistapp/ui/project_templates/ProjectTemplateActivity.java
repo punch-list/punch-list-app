@@ -43,12 +43,12 @@ public class ProjectTemplateActivity extends AppCompatActivity {
         PLProject project = new PLProject("Affordable Traditional Bathroom", ProjectType.BATHROOM);
         project.save();
 
-        List<Item> items = new ArrayList<Item>();
+        List<Item> items = new ArrayList<>();
 
-        items.add(new Item("Toilet #1", "Luxurious throne", 10, 50, project, PLComponent.getComponentByFakeId(Globals.TOILET), 150, 150, "ic_select_toilet", getResources()));
-        items.add(new Item("Toilet #1", "Luxurious throne", 10, 50, project, PLComponent.getComponentByFakeId(Globals.BATHTUB), 150, 150, "ic_select_toilet", getResources()));
-        items.add(new Item("Toilet #1", "Luxurious throne", 10, 50, project, PLComponent.getComponentByFakeId(Globals.TILE), 150, 150, "ic_select_toilet", getResources()));
-        items.add(new Item("Toilet #1", "Luxurious throne", 10, 50, project, PLComponent.getComponentByFakeId(Globals.SINK), 150, 150, "ic_select_toilet", getResources()));
+        items.add(new Item("Toilet #1", "Luxurious throne", 10, 50, project, PLComponent.getComponentByFakeId(Globals.TOILET), 420, 150, "toilet1", getResources()));
+        // items.add(new Item("Toilet #1", "Luxurious throne", 10, 50, project, PLComponent.getComponentByFakeId(Globals.BATHTUB), 150, 150, "", getResources()));
+        items.add(new Item("Tile #1", "Luxurious throne", 10, 50, project, PLComponent.getComponentByFakeId(Globals.TILE), 150, 150, "tile1", getResources()));
+        // items.add(new Item("Toilet #1", "Luxurious throne", 10, 50, project, PLComponent.getComponentByFakeId(Globals.SINK), 150, 150, "", getResources()));
 
         Item.updateItems(items);
 

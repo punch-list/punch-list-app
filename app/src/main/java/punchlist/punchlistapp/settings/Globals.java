@@ -116,6 +116,8 @@ public class Globals {
             items.add(new Item("Glidden Purple Periwinkle", "", 25, 0, null, PLComponent.getComponentByFakeId(Globals.PAINT), EditProjectActivity.FLOORPLAN_WIDTH, EditProjectActivity.FLOORPLAN_HEIGHT, "paint2", mResources));
             items.add(new Item("Benjamin Moore Balboa Mist", "", 55, 50, null, PLComponent.getComponentByFakeId(Globals.PAINT), EditProjectActivity.FLOORPLAN_WIDTH, EditProjectActivity.FLOORPLAN_HEIGHT, "paint1", mResources));
 
+            
+
             Item.updateItems(items);
         }
     }

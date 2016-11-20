@@ -7,8 +7,6 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.squareup.picasso.Picasso;
-
 import java.util.List;
 
 import butterknife.Bind;
@@ -56,6 +54,15 @@ public class PunchListActivity extends ActivityBase {
         mProjectName.setText(mProject.name);
 
         List<Item> items = mProject.getProjectItems();
+        int totalPrice = 0;
+        for (Item item : items) {
+            if (item.component.placeholderId == Globals.TILE) {
+                totalPrice += item.cost * 40;
+            } else {
+                totalPrice += item.cost;
+            }
+        }
+        mTotalPrice.setText("Total Cost: $" + String.valueOf(totalPrice));
 
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(PunchListActivity.this));

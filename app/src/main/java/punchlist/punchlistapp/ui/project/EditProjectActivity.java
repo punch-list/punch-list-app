@@ -4,7 +4,6 @@ import android.content.ClipData;
 import android.content.ClipDescription;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.DragEvent;
 import android.view.View;
 import android.widget.ImageView;
@@ -86,8 +85,6 @@ public class EditProjectActivity extends ActivityBase {
         Long projectId = bundle.getLong(Globals.PROJECT_ID);
         mProject = PLProject.findPLProject(projectId);
 
-        Log.d(TAG, String.valueOf(projectId));
-
         ButterKnife.bind(this);
     }
 
@@ -108,8 +105,8 @@ public class EditProjectActivity extends ActivityBase {
         List<Item> items = Item.getItems();
         for (Item item : items) {
             if (!item.placed) {
-                item.positionX = mFloorplan.getWidth() / 2 - item.width / 2;
-                item.positionY = mFloorplan.getHeight() / 2 - item.height / 2;
+                item.positionX = FLOORPLAN_WIDTH / 2 - item.width / 2;
+                item.positionY = FLOORPLAN_HEIGHT / 2 - item.height / 2;
                 item.placed = true;
                 item.save();
             }
