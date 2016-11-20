@@ -4,6 +4,7 @@ import android.content.ClipData;
 import android.content.ClipDescription;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.DragEvent;
 import android.view.View;
 import android.widget.ImageView;
@@ -84,6 +85,8 @@ public class EditProjectActivity extends ActivityBase {
         Bundle bundle = intent.getExtras();
         Long projectId = bundle.getLong(Globals.PROJECT_ID);
         mProject = PLProject.findPLProject(projectId);
+
+        Log.d(TAG, String.valueOf(projectId));
 
         ButterKnife.bind(this);
     }

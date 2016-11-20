@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F0F0">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_marginTop="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:text="Select Template"
+            android:textSize="25sp"
+            />
+
+
+        <GridLayout
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:columnCount="2"
+            android:layout_marginBottom="40dp"
+            android:orientation="horizontal" >
+
+            <android.support.v7.widget.CardView>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageButton
+                        android:id="@+id/ibFirst"
+                        android:layout_width="@dimen/template_width"
+                        android:layout_height="@dimen/template_width"
+                        android:src="@drawable/fancy_bathroom"
+                        android:padding="0dp"
+                        android:scaleType="fitXY"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#333"
+                        android:padding="5dp"
+                        android:ellipsize="none"
+                        android:scrollHorizontally="false"
+                        android:maxLines="3"
+                        android:textSize="12sp"
+                        android:layout_weight="1"
+                        android:singleLine="false"
+                        android:background="#fafafa"
+                        android:text="Affordable Traditional\nBathroom"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#E9E9E9">
+
+                    </View>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:textSize="12sp"
+                        android:textColor="#aeaeae"
+                        android:text="Designer"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="5dp"
+                        android:paddingBottom="5dp"
+                        android:textSize="12sp"
+                        android:textColor="#000"
+                        android:text="Punchlist"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#E9E9E9"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:textSize="12sp"
+                        android:textColor="#aeaeae"
+                        android:text="Cost"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="5dp"
+                        android:paddingBottom="10dp"
+                        android:textSize="12sp"
+                        android:textColor="#000"
+                        android:text="$1,500"/>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+
+
+            <android.support.v7.widget.CardView
+
+                android:layout_marginLeft="10dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageButton
+                        android:id="@+id/ib2"
+                        android:layout_width="@dimen/template_width"
+                        android:layout_height="@dimen/template_width"
+                        android:src="@drawable/classic_bathroom"
+                        android:padding="0dp"
+                        android:scaleType="fitXY"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#333"
+                        android:padding="5dp"
+                        android:ellipsize="none"
+                        android:scrollHorizontally="false"
+                        android:maxLines="3"
+                        android:textSize="12sp"
+                        android:layout_weight="1"
+                        android:singleLine="false"
+                        android:background="#fafafa"
+                        android:text="Classic Bathroom"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#E9E9E9">
+
+                    </View>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:textSize="12sp"
+                        android:textColor="#aeaeae"
+                        android:text="Designer"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="5dp"
+                        android:paddingBottom="5dp"
+                        android:textSize="12sp"
+                        android:textColor="#000"
+                        android:text="Punchlist"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#E9E9E9"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:textSize="12sp"
+                        android:textColor="#aeaeae"
+                        android:text="Cost"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="5dp"
+                        android:paddingBottom="10dp"
+                        android:textSize="12sp"
+                        android:textColor="#000"
+                        android:text="$1,500"/>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_marginTop="10dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageButton
+                        android:id="@+id/ib3"
+                        android:layout_width="@dimen/template_width"
+                        android:layout_height="@dimen/template_width"
+                        android:src="@drawable/traditional_kitchen"
+                        android:padding="0dp"
+                        android:scaleType="fitXY"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#333"
+                        android:padding="5dp"
+                        android:ellipsize="none"
+                        android:scrollHorizontally="false"
+                        android:maxLines="3"
+                        android:textSize="12sp"
+                        android:layout_weight="1"
+                        android:singleLine="false"
+                        android:background="#fafafa"
+                        android:text="Traditional\nKitchen"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#E9E9E9">
+
+                    </View>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:textSize="12sp"
+                        android:textColor="#aeaeae"
+                        android:text="Designer"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="5dp"
+                        android:paddingBottom="5dp"
+                        android:textSize="12sp"
+                        android:textColor="#000"
+                        android:text="Punchlist"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#E9E9E9"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:textSize="12sp"
+                        android:textColor="#aeaeae"
+                        android:text="Cost"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="5dp"
+                        android:paddingBottom="10dp"
+                        android:textSize="12sp"
+                        android:textColor="#000"
+                        android:text="$1,500"/>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageButton
+                        android:id="@+id/ib4"
+                        android:layout_width="@dimen/template_width"
+                        android:layout_height="@dimen/template_width"
+                        android:src="@drawable/modern_kitchen"
+                        android:padding="0dp"
+                        android:scaleType="fitXY"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#333"
+                        android:padding="5dp"
+                        android:ellipsize="none"
+                        android:scrollHorizontally="false"
+                        android:maxLines="3"
+                        android:textSize="12sp"
+                        android:layout_weight="1"
+                        android:singleLine="false"
+                        android:background="#fafafa"
+                        android:text="Modern Kitchen"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#E9E9E9">
+
+                    </View>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:textSize="12sp"
+                        android:textColor="#aeaeae"
+                        android:text="Designer"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="5dp"
+                        android:paddingBottom="5dp"
+                        android:textSize="12sp"
+                        android:textColor="#000"
+                        android:text="Punchlist"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#E9E9E9"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:textSize="12sp"
+                        android:textColor="#aeaeae"
+                        android:text="Cost"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="5dp"
+                        android:paddingBottom="10dp"
+                        android:textSize="12sp"
+                        android:textColor="#000"
+                        android:text="$1,500"/>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+        </GridLayout>
+    </LinearLayout>
+</ScrollView>
