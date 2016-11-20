@@ -15,4 +15,15 @@
         android:id="@+id/projectsRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/bStartCreateTemplate"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:text="CREATE NEW PROJECT"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="20sp"
+        android:layout_height="50dp" />
 </RelativeLayout>
