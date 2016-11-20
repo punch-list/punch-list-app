@@ -1,6 +1,5 @@
 package punchlist.punchlistapp.ui.punch_list;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
 import android.support.v7.widget.CardView;
@@ -12,15 +11,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.squareup.picasso.Picasso;
-
 import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import punchlist.punchlistapp.R;
 import punchlist.punchlistapp.data_model.Item;
-import punchlist.punchlistapp.data_model.PLProject;
 
 /**
  * Created by carlos on 11/20/16.
@@ -54,9 +50,8 @@ class PunchListRecyclerAdapter extends RecyclerView.Adapter<PunchListRecyclerAda
         final Item item = mItemsList.get(position);
 
         holder.mItemName.setText(item.name);
-        holder.mItemPrice.setText("$50");
+        holder.mItemPrice.setText("$50 / unit");
         holder.mItemImage.setImageResource(mResources.getIdentifier(item.imageResource, "mipmap", mPackageName));
-
     }
 
     @Override

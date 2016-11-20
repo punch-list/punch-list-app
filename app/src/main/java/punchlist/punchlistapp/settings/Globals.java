@@ -13,6 +13,7 @@ import punchlist.punchlistapp.data_model.Item;
 import punchlist.punchlistapp.data_model.PLComponent;
 import punchlist.punchlistapp.data_model.PLProject;
 import punchlist.punchlistapp.data_model.enums.ProjectType;
+import punchlist.punchlistapp.ui.project.EditProjectActivity;
 
 
 public class Globals {
@@ -22,11 +23,14 @@ public class Globals {
     public static final String PREFS_USER_INFO = "PREF_USER_DATA";
     public static final String DEVICE_UUID = "deviceUUID";
     public static final String PROJECT_ID = "project_id";
+
     //Component Ids
     public static final int TOILET = 1;
     public static final int SINK = 2;
     public static final int TILE = 3;
     public static final int BATHTUB = 4;
+    public static final int PAINT = 5;
+
     public static final String COMPONENT = "COMPONENT";
     public static final String PROJECT = "PROJECT";
     private static final String TAG = Globals.class.getSimpleName();
@@ -75,27 +79,36 @@ public class Globals {
     public static void prepopulateDb() {
         if (PLProject.getPLProjects().isEmpty()) {
             List<PLProject> projects = new ArrayList<>();
+
             projects.add(new PLProject("My New Bathroom", ProjectType.BATHROOM));
             projects.add(new PLProject("My New Kitchen", ProjectType.KITCHEN));
             projects.add(new PLProject("My New Living Room", ProjectType.LIVING_ROOM));
+
             PLProject.updatePLProjects(projects);
         }
 
         if (PLComponent.getPLComponents().isEmpty()) {
             List<PLComponent> components = new ArrayList<>();
+
             components.add(new PLComponent("Toilet", Globals.TOILET));
             components.add(new PLComponent("Tile", Globals.TILE));
             components.add(new PLComponent("Bathtub", Globals.BATHTUB));
             components.add(new PLComponent("Sink", Globals.SINK));
+            components.add(new PLComponent("Paint", Globals.PAINT));
+
             PLComponent.updatePLComponents(components);
         }
 
         if (Item.getItems().isEmpty()) {
             List<Item> items = new ArrayList<>();
+
             items.add(new Item("Toilet #1", "Luxurious throne", 10, 50, null, PLComponent.getComponentByFakeId(Globals.TOILET), 150, 150, "ic_select_toilet"));
             items.add(new Item("Toilet #2", "A slightly more luxurious throne", 10, 50, null, PLComponent.getComponentByFakeId(Globals.TOILET), 150, 150, "ic_select_sink"));
 
-            items.add(new Item("Tile #1", "The shiniest thing you've ever seen, guaranteed!™", 10, 50, null, PLComponent.getComponentByFakeId(Globals.TILE), 300, 300, "tile"));
+            items.add(new Item("Tile #1", "The shiniest thing you've ever seen, guaranteed!™", 10, 50, null, PLComponent.getComponentByFakeId(Globals.TILE), 300, 300, "tile1"));
+
+            items.add(new Item("Paint #1", "The human eye will not be able to comprehend the vibrancy of your wall.", 10, 50, null, PLComponent.getComponentByFakeId(Globals.PAINT), EditProjectActivity.FLOORPLAN_WIDTH, EditProjectActivity.FLOORPLAN_HEIGHT, "paint1"));
+
             Item.updateItems(items);
         }
     }

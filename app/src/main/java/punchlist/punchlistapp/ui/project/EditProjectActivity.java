@@ -37,8 +37,8 @@ public class EditProjectActivity extends ActivityBase {
     @Bind(R.id.flFloorplan)
     RelativeLayout mFloorplan;
 
-    final int FLOORPLAN_WIDTH = 811;
-    final int FLOORPLAN_HEIGHT = 1299;
+    public static final int FLOORPLAN_WIDTH = 831;
+    public static final int FLOORPLAN_HEIGHT = 1320;
 
     @OnClick(R.id.ibToilet)
     public void openToilet() {
@@ -61,6 +61,12 @@ public class EditProjectActivity extends ActivityBase {
     @OnClick(R.id.ibTile)
     public void openTile() {
         selectedComponent = PLComponent.getComponentByFakeId(Globals.TILE);
+        openItemSelectionDialog();
+    }
+
+    @OnClick(R.id.ibPaint)
+    public void openPaint() {
+        selectedComponent = PLComponent.getComponentByFakeId(Globals.PAINT);
         openItemSelectionDialog();
     }
 
@@ -141,7 +147,7 @@ public class EditProjectActivity extends ActivityBase {
                 params.topMargin = item.positionY;
                 imageView.setLayoutParams(params);
 
-                imageView.setImageResource(getResources().getIdentifier(item.imageResource, "mipmap", getPackageName()));
+                imageView.setImageResource(getResources().getIdentifier(item.imageResource, "drawable", getPackageName()));
 
                 mFloorplan.addView(imageView);
 
