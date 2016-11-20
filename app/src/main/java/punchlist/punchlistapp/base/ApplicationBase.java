@@ -27,14 +27,7 @@ public class ApplicationBase extends com.activeandroid.app.Application {
         instance = this;
         ApplicationBase.context = getApplicationContext();
 
-        Globals.prepopulateDb();
-    }
-
-    @Override
-    public void onTerminate() {
-        super.onTerminate();
-
-        Globals.clearDatabase();
+        Globals.getInstance(getResources()).prepopulateDb();
     }
 }
 

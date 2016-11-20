@@ -39,7 +39,7 @@ public class EditProjectActivity extends ActivityBase {
     RelativeLayout mFloorplan;
 
     public static final int FLOORPLAN_WIDTH = 831;
-    public static final int FLOORPLAN_HEIGHT = 1360;
+    public static final int FLOORPLAN_HEIGHT = 1320;
 
     @OnClick(R.id.ibToilet)
     public void openToilet() {
@@ -145,12 +145,12 @@ public class EditProjectActivity extends ActivityBase {
                 ImageView imageView = new ImageView(getContext());
                 imageView.setTag(item.getId());
 
+                imageView.setImageResource(getResources().getIdentifier(item.imageResource, "drawable", getPackageName()));
+
                 RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(item.width, item.height);
                 params.leftMargin = item.positionX;
                 params.topMargin = item.positionY;
                 imageView.setLayoutParams(params);
-
-                imageView.setImageResource(getResources().getIdentifier(item.imageResource, "drawable", getPackageName()));
 
                 mFloorplan.addView(imageView);
 
@@ -202,8 +202,8 @@ public class EditProjectActivity extends ActivityBase {
                         break;
                     case DragEvent.ACTION_DROP:
                         Item item = Item.findItem((long) currentImageView.getTag());
-                        item.positionX = clamp(0, FLOORPLAN_WIDTH - currentImageView.getWidth(), (int) event.getX() - currentImageView.getWidth() / 2);
-                        item.positionY = clamp(0, FLOORPLAN_HEIGHT - currentImageView.getHeight(), (int) event.getY() - currentImageView.getHeight() / 2);
+                        item.positionX = clamp(0, FLOORPLAN_WIDTH - item.width, (int) event.getX() - item.width / 2);
+                        item.positionY = clamp(0, FLOORPLAN_HEIGHT - item.height, (int) event.getY() - item.height / 2);
                         item.save();
 
                         currentImageView.setVisibility(View.VISIBLE);

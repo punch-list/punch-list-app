@@ -1,7 +1,9 @@
 package punchlist.punchlistapp.settings;
 
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.preference.PreferenceManager;
+import android.util.TypedValue;
 
 import com.activeandroid.query.Delete;
 
@@ -41,17 +43,20 @@ public class Globals {
     public SharedPreferences mSettings;
     private String deviceUuid;
 
-    private Globals() {
+    private static Resources mResources;
+
+    private Globals(Resources resources) {
         mPrefs = PreferenceManager.getDefaultSharedPreferences(ApplicationBase.getAppContext());
         mUserInfo = ApplicationBase.getAppContext().getSharedPreferences(PREFS_USER_INFO, 0);
         mSettings = ApplicationBase.getAppContext().getSharedPreferences(PREFS_NAME, 0);
+        mResources = resources;
     }
 
-    public static Globals getInstance() {
+    public static Globals getInstance(Resources resources) {
         if (sInstance == null) {
             synchronized (Globals.class) {
                 if (sInstance == null) {
-                    sInstance = new Globals();
+                    sInstance = new Globals(resources);
                 }
             }
         }
@@ -70,13 +75,13 @@ public class Globals {
         this.deviceUuid = uuid;
     }
 
-    public static void clearDatabase() {
+    public void clearDatabase() {
         new Delete().from(Item.class).execute();
         new Delete().from(PLProject.class).execute();
         new Delete().from(PLComponent.class).execute();
     }
 
-    public static void prepopulateDb() {
+    public void prepopulateDb() {
         if (PLProject.getPLProjects().isEmpty()) {
             List<PLProject> projects = new ArrayList<>();
 
@@ -102,17 +107,21 @@ public class Globals {
         if (Item.getItems().isEmpty()) {
             List<Item> items = new ArrayList<>();
 
-            items.add(new Item("Drake 2-piece", "", 216, 4, null, PLComponent.getComponentByFakeId(Globals.TOILET), 420, 162, "toilet1"));
-            items.add(new Item("Memoirs Stately 2-piece", "A slightly more luxurious throne", 349, 4, null, PLComponent.getComponentByFakeId(Globals.TOILET), 150, 150, "toilet2"));
+            items.add(new Item("Drake 2-piece", "", 216, 4, null, PLComponent.getComponentByFakeId(Globals.TOILET), 420, 162, "toilet1", mResources));
+            items.add(new Item("Memoirs Stately 2-piece", "A slightly more luxurious throne", 349, 4, null, PLComponent.getComponentByFakeId(Globals.TOILET), 150, 150, "toilet2", mResources));
 
-            items.add(new Item("Solerno Moderna", "", 2, 50, null, PLComponent.getComponentByFakeId(Globals.TILE), 300, 300, "tile1"));
-            items.add(new Item("Daltile Porcelain - Yacht Club Series", "", 3, 0, null, PLComponent.getComponentByFakeId(Globals.TILE), 300, 300, "tile2"));
+            items.add(new Item("Solerno Moderna", "", 2, 50, null, PLComponent.getComponentByFakeId(Globals.TILE), 300, 300, "tile1", mResources));
+            items.add(new Item("Daltile Porcelain - Yacht Club Series", "", 3, 0, null, PLComponent.getComponentByFakeId(Globals.TILE), 300, 300, "tile2", mResources));
 
-            items.add(new Item("Glidden Purple Periwinkle", "", 25, 0, null, PLComponent.getComponentByFakeId(Globals.PAINT), EditProjectActivity.FLOORPLAN_WIDTH, EditProjectActivity.FLOORPLAN_HEIGHT, "paint2"));
-            items.add(new Item("Benjamin Moore Balboa Mist", "", 55, 50, null, PLComponent.getComponentByFakeId(Globals.PAINT), EditProjectActivity.FLOORPLAN_WIDTH, EditProjectActivity.FLOORPLAN_HEIGHT, "paint1"));
+            items.add(new Item("Glidden Purple Periwinkle", "", 25, 0, null, PLComponent.getComponentByFakeId(Globals.PAINT), EditProjectActivity.FLOORPLAN_WIDTH, EditProjectActivity.FLOORPLAN_HEIGHT, "paint2", mResources));
+            items.add(new Item("Benjamin Moore Balboa Mist", "", 55, 50, null, PLComponent.getComponentByFakeId(Globals.PAINT), EditProjectActivity.FLOORPLAN_WIDTH, EditProjectActivity.FLOORPLAN_HEIGHT, "paint1", mResources));
 
             Item.updateItems(items);
         }
+    }
+
+    public static int pixelsToDp(int pixels) {
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, pixels, mResources.getDisplayMetrics());
     }
 
     public void clearPreferences() {

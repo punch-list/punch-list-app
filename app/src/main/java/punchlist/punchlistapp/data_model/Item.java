@@ -4,6 +4,8 @@ package punchlist.punchlistapp.data_model;
  * Created by joshg on 11/19/16.
  */
 
+import android.content.res.Resources;
+
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
@@ -52,12 +54,17 @@ public class Item extends Model implements Serializable {
     @Column(name = "Height")
     public int height;
 
+    private static Resources mResources;
+
     public Item() {
         super();
     }
 
-    public Item(String name, String description, int cost, int area, PLProject project, PLComponent component, int width, int height, String imageResource) {
+    public Item(String name, String description, int cost, int area, PLProject project, PLComponent component, int width, int height, String imageResource, Resources resources) {
         super();
+
+        mResources = resources;
+
         this.name = name;
         this.description = description;
         this.cost = cost;
@@ -74,7 +81,7 @@ public class Item extends Model implements Serializable {
 
     private static void updateItem(Item apiItem) {
         if (apiItem.getId() == null) {
-            Item item = new Item(apiItem.name, apiItem.description, apiItem.cost, apiItem.area, apiItem.project, apiItem.component, apiItem.width, apiItem.height, apiItem.imageResource);
+            Item item = new Item(apiItem.name, apiItem.description, apiItem.cost, apiItem.area, apiItem.project, apiItem.component, apiItem.width, apiItem.height, apiItem.imageResource, apiItem.mResources);
             item.save();
         } else {
             Item item = apiItem;

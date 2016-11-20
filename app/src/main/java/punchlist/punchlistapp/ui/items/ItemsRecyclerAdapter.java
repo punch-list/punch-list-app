@@ -52,7 +52,7 @@ class ItemsRecyclerAdapter extends RecyclerView.Adapter<ItemsRecyclerAdapter.Vie
         holder.mCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            Item copyItem = new Item(item.name, item.description, item.cost, item.area, mProject, item.component, item.width, item.height, item.imageResource);
+            Item copyItem = new Item(item.name, item.description, item.cost, item.area, mProject, item.component, item.width, item.height, item.imageResource, mResources);
 
             List<Item> existingItems = mProject.getProjectItems();
             for (Item existingItem : existingItems) {
