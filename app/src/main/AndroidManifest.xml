@@ -22,15 +22,14 @@
             android:value="punchlist.punchlistapp.data_model.PLProject, punchlist.punchlistapp.data_model.Item, punchlist.punchlistapp.data_model.PLComponent" />
 
         <activity android:name=".ui.login.SignInActivity">
-        </activity>
-        <activity
-            android:name=".ui.project.ProjectsActivity"
-            android:label="@string/title_activity_projects">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.project.ProjectsActivity">
         </activity>
         <activity android:name=".ui.project.EditProjectActivity"></activity>
         <activity

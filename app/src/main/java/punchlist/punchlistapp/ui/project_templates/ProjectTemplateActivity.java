@@ -45,10 +45,11 @@ public class ProjectTemplateActivity extends AppCompatActivity {
 
         List<Item> items = new ArrayList<>();
 
-        items.add(new Item("Toilet #1", "Luxurious throne", 10, 50, project, PLComponent.getComponentByFakeId(Globals.TOILET), 420, 150, "toilet1", getResources()));
-        // items.add(new Item("Toilet #1", "Luxurious throne", 10, 50, project, PLComponent.getComponentByFakeId(Globals.BATHTUB), 150, 150, "", getResources()));
-        items.add(new Item("Tile #1", "Luxurious throne", 10, 50, project, PLComponent.getComponentByFakeId(Globals.TILE), 150, 150, "tile1", getResources()));
-        // items.add(new Item("Toilet #1", "Luxurious throne", 10, 50, project, PLComponent.getComponentByFakeId(Globals.SINK), 150, 150, "", getResources()));
+        items.add(new Item("Solerno Moderna", "", 2, 0, null, PLComponent.getComponentByFakeId(Globals.TILE), 300, 300, "tile1", getResources(), 205, 579, true));
+        items.add(new Item("Tile #1", "Luxurious throne", 10, 50, project, PLComponent.getComponentByFakeId(Globals.TILE), 150, 150, "tile1", getResources(), 579, 205, true));
+        items.add(new Item("Hillsbury 36\" + Pfister Courant", "", 577, 0, null, PLComponent.getComponentByFakeId(Globals.SINK), 420 * 3, 160 * 3, "sink1", getResources(), 100, 100, true));
+        items.add(new Item("Sterling Ensemble", "", 235, 0, null, PLComponent.getComponentByFakeId(Globals.BATHTUB), 420 * 3, 160 * 3, "bathtub1", getResources(), 500, 500, true));
+        items.add(new Item("Glidden Purple Periwinkle", "", 25, 0, null, PLComponent.getComponentByFakeId(Globals.PAINT), EditProjectActivity.FLOORPLAN_WIDTH, EditProjectActivity.FLOORPLAN_HEIGHT, "paint2", getResources(), 0, 0, true));
 
         Item.updateItems(items);
 

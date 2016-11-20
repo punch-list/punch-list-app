@@ -60,7 +60,7 @@ public class Item extends Model implements Serializable {
         super();
     }
 
-    public Item(String name, String description, int cost, int area, PLProject project, PLComponent component, int width, int height, String imageResource, Resources resources) {
+    public Item(String name, String description, int cost, int area, PLProject project, PLComponent component, int width, int height, String imageResource, Resources resources, Integer positionX, Integer positionY, boolean placed) {
         super();
 
         mResources = resources;
@@ -72,11 +72,16 @@ public class Item extends Model implements Serializable {
         this.project = project;
         this.component = component;
         this.placed = false;
-        positionX = null;
-        positionY = null;
+        this.positionX = positionX;
+        this.positionY = positionY;
         this.width = width;
         this.height = height;
         this.imageResource = imageResource;
+        this.placed = placed;
+    }
+
+    public Item(String name, String description, int cost, int area, PLProject project, PLComponent component, int width, int height, String imageResource, Resources resources) {
+        this(name, description, cost, area, project, component, width, height, imageResource, resources, null, null, false);
     }
 
     private static void updateItem(Item apiItem) {
