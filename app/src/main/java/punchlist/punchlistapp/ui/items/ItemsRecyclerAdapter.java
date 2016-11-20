@@ -52,14 +52,21 @@ class ItemsRecyclerAdapter extends RecyclerView.Adapter<ItemsRecyclerAdapter.Vie
         holder.mCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Item copyItem = new Item(item.name, item.description, item.cost, item.area, mProject, item.component, item.width, item.height, item.imageResource);
-                copyItem.save();
+            Item copyItem = new Item(item.name, item.description, item.cost, item.area, mProject, item.component, item.width, item.height, item.imageResource);
 
-                ((Activity) mContext).finish();
+            List<Item> existingItems = mProject.getProjectItems();
+            for (Item existingItem : existingItems) {
+                if (existingItem.component.placeholderId == copyItem.component.placeholderId) {
+                    existingItem.delete();
+                }
+            }
+
+            copyItem.save();
+
+            ((Activity) mContext).finish();
             }
         });
         holder.mItemName.setText(item.name);
-
         holder.mItemImage.setImageResource(mResources.getIdentifier(item.imageResource, "mipmap", mPackageName));
     }
 

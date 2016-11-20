@@ -33,7 +33,10 @@ public class ItemsDialogActivity extends ActivityBase {
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
+
         PLComponent mComponent = PLComponent.getComponentByFakeId(bundle.getInt(Globals.COMPONENT));
+        setTitle("Select " + mComponent.name);
+
         Long projectId = bundle.getLong(Globals.PROJECT_ID);
         PLProject project = PLProject.findPLProject(projectId);
 

@@ -6,8 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.DragEvent;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import java.util.List;
 
@@ -29,17 +29,15 @@ public class EditProjectActivity extends ActivityBase {
     final int RC_SELECT_ITEM = 9002;
 
     String TAG = "EDIT PROJECT ACTIVITY";
-    @Bind(R.id.ibToilet)
-    ImageView mToiletButton;
 
     PLComponent selectedComponent;
     PLProject mProject;
 
     @Bind(R.id.flFloorplan)
-    FrameLayout mFloorplan;
+    RelativeLayout mFloorplan;
 
-    final int FLOORPLAN_WIDTH = 1004;
-    final int FLOORPLAN_HEIGHT = 627;
+    final int FLOORPLAN_WIDTH = 811;
+    final int FLOORPLAN_HEIGHT = 1299;
 
     @OnClick(R.id.ibToilet)
     public void openToilet() {
@@ -95,8 +93,8 @@ public class EditProjectActivity extends ActivityBase {
         List<Item> items = Item.getItems();
         for (Item item : items) {
             if (!item.placed) {
-                item.positionX = 50;
-                item.positionY = 50;
+                item.positionX = mFloorplan.getWidth() / 2 - item.width / 2;
+                item.positionY = mFloorplan.getHeight() / 2 - item.height / 2;
                 item.placed = true;
                 item.save();
             }
@@ -113,11 +111,11 @@ public class EditProjectActivity extends ActivityBase {
         }
 
         if (tile != null) {
-            ImageView imageView = new ImageView(getContext());
-            FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(FLOORPLAN_WIDTH, FLOORPLAN_WIDTH);
-            imageView.setLayoutParams(params);
-            imageView.setImageResource(getResources().getIdentifier(tile.imageResource, "mipmap", getPackageName()));
-            mFloorplan.addView(imageView);
+            RelativeLayout tileView = new RelativeLayout(getContext());
+            RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(FLOORPLAN_WIDTH, FLOORPLAN_HEIGHT);
+            tileView.setLayoutParams(params);
+            tileView.setBackgroundResource(getResources().getIdentifier(tile.imageResource, "drawable", getPackageName()));
+            mFloorplan.addView(tileView);
         }
     }
 
@@ -132,7 +130,7 @@ public class EditProjectActivity extends ActivityBase {
                 ImageView imageView = new ImageView(getContext());
                 imageView.setTag(item.getId());
 
-                FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(item.width, item.height);
+                RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(item.width, item.height);
                 params.leftMargin = item.positionX;
                 params.topMargin = item.positionY;
                 imageView.setLayoutParams(params);
@@ -180,20 +178,13 @@ public class EditProjectActivity extends ActivityBase {
                         currentImageView.setVisibility(View.INVISIBLE);
                         break;
                     case DragEvent.ACTION_DROP:
-                        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(currentImageView.getLayoutParams());
-
-                        int newX = clamp(0, FLOORPLAN_WIDTH - currentImageView.getWidth(), (int) event.getX() - currentImageView.getWidth() / 2);
-                        int newY = clamp(0, FLOORPLAN_HEIGHT - currentImageView.getHeight(), (int) event.getY() - currentImageView.getHeight() / 2);
-
-                        params.leftMargin = newX;
-                        params.topMargin = newY;
-                        currentImageView.setLayoutParams(params);
-                        currentImageView.setVisibility(View.VISIBLE);
-
                         Item item = Item.findItem((long) currentImageView.getTag());
-                        item.positionX = newX;
-                        item.positionY = newY;
+                        item.positionX = clamp(0, FLOORPLAN_WIDTH - currentImageView.getWidth(), (int) event.getX() - currentImageView.getWidth() / 2);
+                        item.positionY = clamp(0, FLOORPLAN_HEIGHT - currentImageView.getHeight(), (int) event.getY() - currentImageView.getHeight() / 2);
                         item.save();
+
+                        currentImageView.setVisibility(View.VISIBLE);
+                        render();
                         break;
                     default:
                         break;

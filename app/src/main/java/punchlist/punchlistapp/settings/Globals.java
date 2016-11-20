@@ -93,7 +93,9 @@ public class Globals {
         if (Item.getItems().isEmpty()) {
             List<Item> items = new ArrayList<>();
             items.add(new Item("Toilet #1", "Luxurious throne", 10, 50, null, PLComponent.getComponentByFakeId(Globals.TOILET), 150, 150, "ic_select_toilet"));
-            items.add(new Item("Tile #1", "The shiniest thing you've ever seen, guaranteed!™", 10, 50, null, PLComponent.getComponentByFakeId(Globals.TILE), 300, 300, "ic_select_tile"));
+            items.add(new Item("Toilet #2", "A slightly more luxurious throne", 10, 50, null, PLComponent.getComponentByFakeId(Globals.TOILET), 150, 150, "ic_select_sink"));
+
+            items.add(new Item("Tile #1", "The shiniest thing you've ever seen, guaranteed!™", 10, 50, null, PLComponent.getComponentByFakeId(Globals.TILE), 300, 300, "tile"));
             Item.updateItems(items);
         }
     }
