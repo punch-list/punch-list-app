@@ -51,7 +51,7 @@ class PunchListRecyclerAdapter extends RecyclerView.Adapter<PunchListRecyclerAda
 
         holder.mItemName.setText(item.name);
         holder.mItemPrice.setText("$50 / unit");
-        holder.mItemImage.setImageResource(mResources.getIdentifier(item.imageResource, "mipmap", mPackageName));
+        holder.mItemImage.setImageResource(mResources.getIdentifier(item.imageResource + "_thumbnail", "drawable", mPackageName));
     }
 
     @Override

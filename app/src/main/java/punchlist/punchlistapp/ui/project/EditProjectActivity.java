@@ -38,7 +38,7 @@ public class EditProjectActivity extends ActivityBase {
     RelativeLayout mFloorplan;
 
     public static final int FLOORPLAN_WIDTH = 831;
-    public static final int FLOORPLAN_HEIGHT = 1320;
+    public static final int FLOORPLAN_HEIGHT = 1360;
 
     @OnClick(R.id.ibToilet)
     public void openToilet() {

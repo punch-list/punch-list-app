@@ -102,13 +102,14 @@ public class Globals {
         if (Item.getItems().isEmpty()) {
             List<Item> items = new ArrayList<>();
 
-            items.add(new Item("Toilet #1", "Luxurious throne", 10, 50, null, PLComponent.getComponentByFakeId(Globals.TOILET), 150, 150, "ic_select_toilet"));
-            items.add(new Item("Toilet #2", "A slightly more luxurious throne", 10, 50, null, PLComponent.getComponentByFakeId(Globals.TOILET), 150, 150, "ic_select_sink"));
+            items.add(new Item("Drake 2-piece", "", 216, 4, null, PLComponent.getComponentByFakeId(Globals.TOILET), 420, 162, "toilet1"));
+            items.add(new Item("Memoirs Stately 2-piece", "A slightly more luxurious throne", 349, 4, null, PLComponent.getComponentByFakeId(Globals.TOILET), 150, 150, "toilet2"));
 
-            items.add(new Item("Tile #1", "The shiniest thing you've ever seen, guaranteed!™", 10, 50, null, PLComponent.getComponentByFakeId(Globals.TILE), 300, 300, "tile1"));
+            items.add(new Item("Solerno Moderna", "", 2, 50, null, PLComponent.getComponentByFakeId(Globals.TILE), 300, 300, "tile1"));
+            items.add(new Item("Daltile Porcelain - Yacht Club Series", "", 3, 0, null, PLComponent.getComponentByFakeId(Globals.TILE), 300, 300, "tile2"));
 
-            items.add(new Item("Paint #1", "The human eye will not be able to comprehend the vibrancy of your wall.", 10, 50, null, PLComponent.getComponentByFakeId(Globals.PAINT), EditProjectActivity.FLOORPLAN_WIDTH, EditProjectActivity.FLOORPLAN_HEIGHT, "paint1"));
-            items.add(new Item("Paint #2", "Random description", 100, 500, null, PLComponent.getComponentByFakeId(Globals.PAINT), EditProjectActivity.FLOORPLAN_WIDTH, EditProjectActivity.FLOORPLAN_HEIGHT, "paint2"));
+            items.add(new Item("Glidden Purple Periwinkle", "", 25, 0, null, PLComponent.getComponentByFakeId(Globals.PAINT), EditProjectActivity.FLOORPLAN_WIDTH, EditProjectActivity.FLOORPLAN_HEIGHT, "paint2"));
+            items.add(new Item("Benjamin Moore Balboa Mist", "", 55, 50, null, PLComponent.getComponentByFakeId(Globals.PAINT), EditProjectActivity.FLOORPLAN_WIDTH, EditProjectActivity.FLOORPLAN_HEIGHT, "paint1"));
 
             Item.updateItems(items);
         }

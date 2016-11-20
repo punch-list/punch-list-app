@@ -67,7 +67,7 @@ class ItemsRecyclerAdapter extends RecyclerView.Adapter<ItemsRecyclerAdapter.Vie
             }
         });
         holder.mItemName.setText(item.name);
-        holder.mItemImage.setImageResource(mResources.getIdentifier(item.imageResource, "mipmap", mPackageName));
+        holder.mItemImage.setImageResource(mResources.getIdentifier(item.imageResource + "_thumbnail", "drawable", mPackageName));
     }
 
     @Override

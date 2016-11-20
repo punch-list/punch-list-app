@@ -82,10 +82,5 @@
 
             </LinearLayout>
         </FrameLayout>
-
-
-
-
-
     </LinearLayout>
 </android.support.v7.widget.CardView>
