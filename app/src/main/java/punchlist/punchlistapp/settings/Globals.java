@@ -107,16 +107,19 @@ public class Globals {
         if (Item.getItems().isEmpty()) {
             List<Item> items = new ArrayList<>();
 
-            items.add(new Item("Drake 2-piece", "", 216, 4, null, PLComponent.getComponentByFakeId(Globals.TOILET), 420, 162, "toilet1", mResources));
-            items.add(new Item("Memoirs Stately 2-piece", "A slightly more luxurious throne", 349, 4, null, PLComponent.getComponentByFakeId(Globals.TOILET), 150, 150, "toilet2", mResources));
+            items.add(new Item("Drake 2-piece", "", 216, 4, null, PLComponent.getComponentByFakeId(Globals.TOILET), 420 * 3, 162 * 3, "toilet1", mResources));
+            items.add(new Item("Memoirs Stately 2-piece", "A slightly more luxurious throne", 349, 4, null, PLComponent.getComponentByFakeId(Globals.TOILET), 420 * 3, 162 * 3, "toilet2", mResources));
 
-            items.add(new Item("Solerno Moderna", "", 2, 50, null, PLComponent.getComponentByFakeId(Globals.TILE), 300, 300, "tile1", mResources));
+            items.add(new Item("Solerno Moderna", "", 2, 0, null, PLComponent.getComponentByFakeId(Globals.TILE), 300, 300, "tile1", mResources));
             items.add(new Item("Daltile Porcelain - Yacht Club Series", "", 3, 0, null, PLComponent.getComponentByFakeId(Globals.TILE), 300, 300, "tile2", mResources));
 
             items.add(new Item("Glidden Purple Periwinkle", "", 25, 0, null, PLComponent.getComponentByFakeId(Globals.PAINT), EditProjectActivity.FLOORPLAN_WIDTH, EditProjectActivity.FLOORPLAN_HEIGHT, "paint2", mResources));
-            items.add(new Item("Benjamin Moore Balboa Mist", "", 55, 50, null, PLComponent.getComponentByFakeId(Globals.PAINT), EditProjectActivity.FLOORPLAN_WIDTH, EditProjectActivity.FLOORPLAN_HEIGHT, "paint1", mResources));
+            items.add(new Item("Benjamin Moore Balboa Mist", "", 55, 0, null, PLComponent.getComponentByFakeId(Globals.PAINT), EditProjectActivity.FLOORPLAN_WIDTH, EditProjectActivity.FLOORPLAN_HEIGHT, "paint1", mResources));
 
-            
+            items.add(new Item("Hillsbury 36\" + Pfister Courant", "", 577, 0, null, PLComponent.getComponentByFakeId(Globals.SINK), 420 * 3, 160 * 3, "sink1", mResources));
+            items.add(new Item("Vinnova Gela 36\" + Delta Two", "", 1073, 0, null, PLComponent.getComponentByFakeId(Globals.SINK), 420 * 3, 160 * 3, "sink2", mResources));
+
+            items.add(new Item("Sterling Ensemble", "", 235, 0, null, PLComponent.getComponentByFakeId(Globals.BATHTUB), 420 * 3, 160 * 3, "bathtub1", mResources));
 
             Item.updateItems(items);
         }

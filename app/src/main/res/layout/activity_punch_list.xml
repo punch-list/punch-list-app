@@ -8,9 +8,6 @@
     android:orientation="vertical"
     tools:context="punchlist.punchlistapp.ui.punch_list.PunchListActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
     <Button
         android:id="@+id/bRequestBids"
         android:layout_width="match_parent"
