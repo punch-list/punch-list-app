@@ -21,6 +21,7 @@ import punchlist.punchlistapp.data_model.PLComponent;
 import punchlist.punchlistapp.data_model.PLProject;
 import punchlist.punchlistapp.settings.Globals;
 import punchlist.punchlistapp.ui.items.ItemsDialogActivity;
+import punchlist.punchlistapp.ui.punch_list.PunchListActivity;
 
 import static punchlist.punchlistapp.base.ApplicationBase.getContext;
 
@@ -61,6 +62,11 @@ public class EditProjectActivity extends ActivityBase {
     public void openTile() {
         selectedComponent = PLComponent.getComponentByFakeId(Globals.TILE);
         openItemSelectionDialog();
+    }
+
+    @OnClick(R.id.bCreatePunchList)
+    public void clickedCreatePunchList() {
+        createPunchList();
     }
 
     @Override
@@ -142,6 +148,14 @@ public class EditProjectActivity extends ActivityBase {
                 setClickListener(imageView);
             }
         }
+    }
+
+    private void createPunchList() {
+        Intent intent = new Intent(this, PunchListActivity.class);
+        Bundle mBundle = new Bundle();
+        mBundle.putLong(Globals.PROJECT_ID, mProject.getId().intValue());
+        intent.putExtras(mBundle);
+        startActivity(intent);
     }
 
     private void openItemSelectionDialog() {
