@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="punchlist.punchlistapp">
+    package="punchlist.punchlistapp">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".base.ApplicationBase"
@@ -13,32 +13,34 @@
         android:theme="@style/PunchListTheme">
         <meta-data
             android:name="AA_DB_NAME"
-            android:value="PunchList.db"/>
+            android:value="PunchList.db" />
         <meta-data
             android:name="AA_DB_VERSION"
-            android:value="1"/>
+            android:value="1" />
         <meta-data
             android:name="AA_MODELS"
-            android:value="punchlist.punchlistapp.data_model.PLProject, punchlist.punchlistapp.data_model.Item, punchlist.punchlistapp.data_model.PLComponent"/>
+            android:value="punchlist.punchlistapp.data_model.PLProject, punchlist.punchlistapp.data_model.Item, punchlist.punchlistapp.data_model.PLComponent" />
 
         <activity android:name=".ui.login.SignInActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".ui.project.ProjectsActivity"
             android:label="@string/title_activity_projects">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
         <activity android:name=".ui.project.EditProjectActivity">
         </activity>
+
         <activity
             android:name=".ui.items.ItemsDialogActivity"
-            android:theme="@style/Theme.AppCompat.Light.Dialog">
-        </activity>
-        <activity android:name=".ui.project.FinalizeProjectActivity">
+            android:theme="@style/Theme.AppCompat.Light.Dialog"></activity>
+        <activity android:name=".ui.project.FinalizeProjectActivity"></activity>
+        <activity android:name=".ui.punch_list.PunchListActivity">
         </activity>
     </application>
 

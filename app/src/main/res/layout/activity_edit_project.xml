@@ -21,7 +21,7 @@
         android:id="@+id/flEditProject"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_alignParentBottom="true">
+        android:layout_above="@+id/bCreatePunchList">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -53,4 +53,14 @@
                 android:src="@mipmap/ic_select_toilet"/>
         </LinearLayout>
     </FrameLayout>
+    <Button
+        android:id="@+id/bCreatePunchList"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:text="CREATE PUNCHLIST"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="20sp"
+        android:layout_height="50dp" />
 </RelativeLayout>
