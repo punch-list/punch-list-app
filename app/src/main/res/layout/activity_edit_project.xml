@@ -25,7 +25,8 @@
         <RelativeLayout
             android:id="@+id/flFloorplan"
             android:layout_width="811px"
-            android:layout_height="1299px"
+            android:layout_height="1316px"
+            android:paddingRight="17px"
             android:background="@drawable/border"/>
 
         <Space
