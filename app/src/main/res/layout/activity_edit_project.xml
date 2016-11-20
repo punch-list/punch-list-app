@@ -13,8 +13,9 @@
 
     <FrameLayout
         android:id="@+id/flFloorplan"
-        android:layout_width="1400px"
-        android:layout_height="875px">
+        android:layout_width="1004px"
+        android:layout_height="627px"
+        android:background="@drawable/border">
     </FrameLayout>
 
     <FrameLayout

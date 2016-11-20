@@ -38,6 +38,9 @@ public class EditProjectActivity extends ActivityBase {
     @Bind(R.id.flFloorplan)
     FrameLayout mFloorplan;
 
+    final int FLOORPLAN_WIDTH = 1004;
+    final int FLOORPLAN_HEIGHT = 627;
+
     @OnClick(R.id.ibToilet)
     public void openToilet() {
         selectedComponent = PLComponent.getComponentByFakeId(Globals.TOILET);
@@ -95,6 +98,7 @@ public class EditProjectActivity extends ActivityBase {
     }
 
     private void renderItems() {
+        mFloorplan.removeAllViews();
         List<Item> items = mProject.getProjectItems();
         for (Item item : items) {
             if (item != null) {
@@ -151,8 +155,8 @@ public class EditProjectActivity extends ActivityBase {
                     case DragEvent.ACTION_DROP:
                         FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(currentImageView.getLayoutParams());
 
-                        int newX = (int) event.getX() - currentImageView.getWidth() / 2;
-                        int newY = (int) event.getY() - currentImageView.getHeight() / 2;
+                        int newX = clamp(0, FLOORPLAN_WIDTH - currentImageView.getWidth(), (int) event.getX() - currentImageView.getWidth() / 2);
+                        int newY = clamp(0, FLOORPLAN_HEIGHT - currentImageView.getHeight(), (int) event.getY() - currentImageView.getHeight() / 2);
 
                         params.leftMargin = newX;
                         params.topMargin = newY;
@@ -170,5 +174,15 @@ public class EditProjectActivity extends ActivityBase {
                 return true;
             }
         });
+    }
+
+    private int clamp(int min, int max, int value) {
+        if (value < min) {
+            return min;
+        }
+        if (value > max) {
+            return max;
+        }
+        return value;
     }
 }
