@@ -45,7 +45,7 @@
                 android:id="@+id/ibTile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/ic_select_toilet"/>
+                android:src="@mipmap/ic_select_tile"/>
 
             <ImageButton
                 android:id="@+id/ibBathtub"

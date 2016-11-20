@@ -82,6 +82,12 @@ public class EditProjectActivity extends ActivityBase {
     public void onResume() {
         super.onResume();
         centerNewItems();
+        render();
+    }
+
+    private void render() {
+        mFloorplan.removeAllViews();
+        renderTile();
         renderItems();
     }
 
@@ -97,11 +103,32 @@ public class EditProjectActivity extends ActivityBase {
         }
     }
 
+    private void renderTile() {
+        List<Item> items = mProject.getProjectItems();
+        Item tile = null;
+        for (Item item : items) {
+            if (item.component.placeholderId == Globals.TILE) {
+                tile = item;
+            }
+        }
+
+        if (tile != null) {
+            ImageView imageView = new ImageView(getContext());
+            FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(FLOORPLAN_WIDTH, FLOORPLAN_WIDTH);
+            imageView.setLayoutParams(params);
+            imageView.setImageResource(getResources().getIdentifier(tile.imageResource, "mipmap", getPackageName()));
+            mFloorplan.addView(imageView);
+        }
+    }
+
     private void renderItems() {
-        mFloorplan.removeAllViews();
         List<Item> items = mProject.getProjectItems();
         for (Item item : items) {
             if (item != null) {
+                if (item.component.placeholderId == Globals.TILE) {
+                    continue;
+                }
+
                 ImageView imageView = new ImageView(getContext());
                 imageView.setTag(item.getId());
 

@@ -57,9 +57,8 @@ public class PLComponent extends Model implements Serializable {
     }
 
     public static PLComponent findPLComponent(Long PLComponentId) {
-        PLComponent PLComponentQuery = new Select().from(PLComponent.class)
+        return new Select().from(PLComponent.class)
                 .where("id = ?", PLComponentId).executeSingle();
-        return PLComponentQuery;
     }
 
     public static PLComponent getComponentByFakeId(int id) {
